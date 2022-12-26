@@ -10,6 +10,7 @@ const App = () => {
 
     return (
         <main className="container">
+            <h1>Image / video media</h1>
             <div className="media-container">
                 {media.map((file, index) => (
                     <div
