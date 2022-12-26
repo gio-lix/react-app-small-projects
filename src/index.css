@@ -1,0 +1,159 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    background: #414849;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+    width: 95%;
+    min-height: 100vh;
+    position: relative;
+    margin: 0 auto;
+}
+
+@media (min-width: 640px) {
+    .container h1 {
+        text-align: left;
+        font-size: xx-large;
+    }
+}
+
+.container .media-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 15px;
+    margin: 20px auto;
+}
+
+.container .media-container .media {
+    position: relative;
+    height: 220px;
+    width: 100%;
+    border: 1px solid #4b4946;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.7);
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s linear
+}
+
+.container .media-container .media .media-info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0;
+    background: rgba(0, 0, 0, 0.5);
+    transition: all .5s ease-in-out;
+}
+
+.container .media-container .media .media-info i {
+    position: relative;
+    background: transparent;
+    width: 100%;
+    color: wheat;
+    font-size: 2.4em !important;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+.container .media-container .media .media-info i {
+    transform: translateY(-70px);
+    transition: all .4s .3s ease-in-out;
+    opacity: 0;
+}
+
+.container .media-container .media:hover .media-info i {
+    transform: translateY(-20px);
+    opacity: 1;
+}
+
+.container .media-container .media:hover .media-info {
+    opacity: 1;
+}
+
+.container .media-container .media .media-info i:hover {
+    color: white;
+}
+
+
+.container .media-container .media :is(video, img) {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: all 0.3s linear;
+}
+
+.container .media-container .media:hover :is(video, img) {
+    transform: scale(1.1);
+}
+
+.container .popup-media {
+    position: fixed;
+    z-index: -10;
+    top: 0;
+    left: 0;
+
+    background: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+
+}
+
+.container .popup-media.active {
+    opacity: 1;
+    z-index: 100;
+    transition: all .3s linear;
+}
+
+.container .popup-media.active :is(video, img) {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+}
+
+.container .popup-media :is(video, img) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transition: all .3s ease-in;
+    transform: translate(-50%, -30%);
+    opacity: 0;
+    display: block;
+    max-width: 95%;
+    max-height: 95%;
+    object-fit: contain;
+    border: 1px solid #333434;
+}
+
+.container .popup-media span {
+    background: transparent;
+    position: absolute;
+    top: 5px;
+    right: 20px;
+    font-size: 50px;
+    font-weight: bolder;
+    z-index: 100;
+    cursor: pointer;
+    color: #fff;
+
+}
+
