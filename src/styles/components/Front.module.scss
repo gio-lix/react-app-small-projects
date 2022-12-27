@@ -1,0 +1,70 @@
+@import "../breakpoint";
+.root {
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(#7ffad6, #cde3ad);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  button {
+    display: block;
+    margin-top: 50px;
+    width: 170px;
+    padding: 9px;
+    border: 1px solid white;
+    background: transparent;
+    color: green;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all .1s ease-in-out;
+    &:hover {
+      background: #cde3ad;
+      border: 3px solid #cde3ad;
+      color: black;
+      box-shadow: 10px 10px 0px 0px rgba(0,0,0,0.75);
+    }
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 70%;
+    h2 {
+      font-size: 1rem;
+      text-align: center;
+      color: #c9e3ad;
+      text-shadow: 0 0 5px #000000
+    }
+    img:first-child {
+      margin-bottom: 30px;
+    }
+    img:last-child {
+      display: none;
+    }
+  }
+  @include breakpoint-up(medium) {
+    .container {
+      flex-direction: row;
+      align-items: flex-end;
+      h2 {
+        font-size: 1.3rem;
+      }
+      img:first-child {
+        margin-bottom: 0px;
+      }
+      img:last-child {
+        display: inline-block;
+      }
+    }
+
+  }
+  img {
+    height: 100px;
+  }
+}

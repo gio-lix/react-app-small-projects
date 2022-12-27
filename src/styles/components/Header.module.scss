@@ -1,0 +1,82 @@
+@import "../breakpoint";
+
+.root {
+  height: 20vh;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  left: 0;
+  background: #cde3ad;
+  border-bottom: 1px solid #a1a1a1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  button {
+    width: 150px;
+    padding: 5px;
+    background: transparent;
+    border: 1px solid white;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: green;
+    cursor: pointer;
+    transition: .2s;
+    margin: 5px;
+    &:hover {
+      background: #d5f8a1;
+      border: 3px solid #cde3ad;
+      color: black!important;
+      letter-spacing: 3px;
+      box-shadow: 10px 10px 0px 0px rgba(0,0,0,0.75);
+    }
+    @include breakpoint-up(medium) {
+      padding: 10px;
+    }
+  }
+
+
+
+  nav {
+    width: 100%;
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.275rem;
+      font-weight: 600;
+      text-transform: uppercase;
+
+      a {
+        color: gray;
+      }
+    }
+    @include breakpoint-up(medium) {
+      width: 70%;
+      ul {
+        flex-direction: row;
+        justify-content: space-between;
+        font-size: 2rem;
+
+        li {
+          margin-bottom: 0px;
+        }
+      }
+    }
+  }
+  @include breakpoint-up(medium) {
+    height: 23vh;
+  }
+}
+
+.active {
+  background: #d5f8a1!important;
+  border: 3px solid #cde3ad!important;
+  color: black!important;
+  letter-spacing: 4px;
+  box-shadow: 10px 10px 0px 0px rgba(57, 77, 65, 0.34);
+}
