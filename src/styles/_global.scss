@@ -1,0 +1,27 @@
+:root {
+  --white: #fff;
+  --black: black;
+
+  --pink-100: #c299ff;
+
+  --lightlateblue-50: #fff;
+  --lightlateblue-100: #9797ce;
+  --lightlateblue-800: #52527a;
+
+  --darkslateblue-300: #666699;
+  --darkslateblue-400: #5c5c8a;
+  --darkslateblue-500: #47476b;
+  --darkslateblue-800: #3d3d5d;
+
+  --yellow-500: #ff8d2f;
+  --green-500: #04d361;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  main {
+    width: 800px;
+    position: relative;
+  }
+}
